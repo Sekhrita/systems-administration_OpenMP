@@ -1,0 +1,6 @@
+tipo-proceso	n-factorial	tiempo-ejecución
+secuencial	100000	3.899073
+paralelo-1hilos	100000	4.213200
+paralelo-2hilos	100000	2.131703
+paralelo-4hilos	100000	2.150716
+paralelo-8hilos	100000	2.238742
