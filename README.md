@@ -66,6 +66,25 @@ Esta sección contiene scripts para evaluar el rendimiento de la ejecución secu
    - El archivo de log generado se guardará en la carpeta `registro` con un nombre que contiene el valor de `N` y la fecha actual.
    - Se generará un gráfico en formato `.png` que muestra los tiempos de ejecución para cada proceso.
 
+### Estructura del Archivo de Log
+
+El archivo execution_time.log tiene un formato tabular (`tsv`) y contiene la siguiente información:
+
+```markdown
+| tipo-proceso     | n-factorial | tiempo-ejecución |
+|------------------|-------------|------------------|
+| secuencial       | 100000      | 4.016176         |
+| paralelo-1hilos  | 100000      | 4.011657         |
+| paralelo-2hilos  | 100000      | 2.048726         |
+| paralelo-4hilos  | 100000      | 2.039414         |
+| paralelo-8hilos  | 100000      | 2.060040         |
+```
+
+### Visualización del Gráfico
+
+El gráfico generado se guardará en la carpeta registro con un nombre que contiene el valor de N y la fecha actual.
+![Gráfico generado por el programa con n=100000](ejercicio-1/registro/execution_time-100000N-factorial_15-11-2024.png)
+
 ### Respuesta
 
 El análisis del gráfico muestra que el tiempo de ejecución disminuye cuando se utilizan más de un hilo, pero después de 2 hilos ya no se observa una reducción significativa del tiempo de ejecución. Esto se debe a que el sistema utilizado para la prueba (una máquina virtual Debian) solo tiene 2 núcleos disponibles, lo cual limita la capacidad de aprovechar más hilos.
