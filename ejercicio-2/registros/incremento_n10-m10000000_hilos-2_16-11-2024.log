@@ -1,0 +1,34 @@
+#
+tipo-proceso    sin-sincronización
+numero-hilos    2
+numero-iteraciones    10000000
+tiempo-demora    0.418960
+total-incrementos    9977185
+resultado-incremento    arreglo[0]    996914
+resultado-incremento    arreglo[1]    997738
+resultado-incremento    arreglo[2]    996068
+resultado-incremento    arreglo[3]    997934
+resultado-incremento    arreglo[4]    997703
+resultado-incremento    arreglo[5]    999706
+resultado-incremento    arreglo[6]    999615
+resultado-incremento    arreglo[7]    996240
+resultado-incremento    arreglo[8]    995917
+resultado-incremento    arreglo[9]    999350
+#
+tipo-proceso    con-sincronización
+numero-hilos    2
+numero-iteraciones    10000000
+tiempo-demora    0.499188
+total-incrementos    10000000
+resultado-incremento    arreglo[0]    999408
+resultado-incremento    arreglo[1]    1000439
+resultado-incremento    arreglo[2]    1000556
+resultado-incremento    arreglo[3]    998456
+resultado-incremento    arreglo[4]    999215
+resultado-incremento    arreglo[5]    1002254
+resultado-incremento    arreglo[6]    999571
+resultado-incremento    arreglo[7]    1000635
+resultado-incremento    arreglo[8]    999859
+resultado-incremento    arreglo[9]    999607
+#
+numero-inconsistencias    22815
