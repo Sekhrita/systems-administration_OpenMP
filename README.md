@@ -83,6 +83,7 @@ El archivo execution_time.log tiene un formato tabular (`tsv`) y contiene la sig
 ### Visualización del Gráfico
 
 El gráfico generado se guardará en la carpeta registro con un nombre que contiene el valor de N y la fecha actual.
+
 ![Gráfico generado por el programa con n=100000](ejercicio-1/registro/execution_time-100000N-factorial_15-11-2024.png)
 
 ### Respuesta
@@ -186,6 +187,7 @@ numero-inconsistencias    22815
 ### Visualización del Gráfico
 
 El gráfico generado se guardará en la carpeta `registros` con un nombre que contiene los valores de `N`, `M`, el número de hilos y la fecha actual.
+
 ![Gráfico generado por el programa con n=10, m=10000000 y dos hilos](ejercicio-2/registros/incremento_n10-m10000000_hilos-2_16-11-2024.png)
 
 ### Respuesta
