@@ -68,7 +68,7 @@ Esta sección contiene scripts para evaluar el rendimiento de la ejecución secu
 
 ### Estructura del Archivo de Log
 
-El archivo execution_time.log tiene un formato tabular (`tsv`) y contiene la siguiente información:
+El archivo `execution_time-100000N-factorial_15-11-2024.log` tiene un formato tabular (`tsv`) y contiene la siguiente información:
 
 ```markdown
 | tipo-proceso     | n-factorial | tiempo-ejecución |
@@ -199,6 +199,95 @@ Por otro lado, cuando se utiliza sincronización, los incrementos son consistent
 Este ejercicio muestra la importancia de la sincronización al paralelizar operaciones que modifican estructuras de datos compartidas, así como el compromiso entre rendimiento y consistencia que se debe tener en cuenta al trabajar con sistemas paralelos.
 
 ## Ejercicio 3
+
+Este ejercicio consiste en la sumatoria de valores flotantes dentro de un arreglo de `N` elementos generados aleatoriamente. Se implementa la sumatoria de manera secuencial y paralelizada utilizando OpenMP, y se compara el tiempo de cómputo en ambos casos, probando la versión paralelizada con diferentes números de hilos.
+
+### Contenido
+
+- `sumatoria_flotante.c`: Código en C que genera un arreglo de `N` números flotantes aleatorios entre 0 y 1. Implementa la suma de los elementos del arreglo de forma secuencial y paralelizada con 2, 4 y 8 hilos, utilizando OpenMP.
+
+- `graficar_sumatoria_flotante.py`: Script en Python que compila y ejecuta el programa en C, genera un archivo `.log` con los resultados del proceso de sumatoria, y crea un gráfico que compara el tiempo de cómputo en cada tipo de proceso (secuencial y paralelizado).
+
+- `requirements.txt`: Lista de dependencias necesarias para ejecutar el script en Python.
+
+### Requisitos
+
+- **Python 3**
+- **Entorno virtual de Python** (`venv`)
+- **GCC** con soporte para OpenMP
+- Paquetes de Python: `matplotlib`, `pandas`
+- Para instalar las dependencias de Python, se recomienda utilizar el entorno virtual en conjunto con `requirements.txt`
+
+### Instrucciones de Uso
+
+1. **Actualizar el Sistema**:
+   ```bash
+   sudo apt update && sudo apt upgrade
+   ```
+
+2. **Instalar el Entorno Virtual**:
+   ```bash
+   sudo apt-get install python3-venv
+   ```
+
+3. **Crear un Entorno Virtual**:
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
+
+4. **Instalar Dependencias**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+5. **Compilar los Programas en C**:
+   Asegúrate de tener `gcc` instalado y compila los programas.
+
+   ```bash
+   gcc -fopenmp sumatoria_flotante.c -o sumatoria_flotante
+   ```
+
+6. **Ejecutar el Script en Python**:
+   Ejecuta el script `graficar_sumatoria_flotante.py` para realizar la sumatoria y generar el gráfico comparativo:
+
+   ```bash
+   python graficar_sumatoria_flotante.py
+   ```
+
+   - El script solicitará el valor de `N` y compilará el programa en C, generará un archivo `.log` con los resultados y creará un gráfico que muestra el tiempo de cómputo en cada tipo de proceso.
+
+8. **Resultados**:
+   - El archivo de `log` generado se guardará en la carpeta registros con un nombre que contiene el valor de `N` y la fecha actual.
+
+   - Se generará un gráfico en formato `.png` que muestra el tiempo de cómputo para la sumatoria de los valores flotantes en cada tipo de proceso (secuencial y paralelizado con diferentes hilos).
+
+### Estructura del Archivo de Log
+
+El archivo `sumatoria-flotante_n10000000_16-11-2024.log` tiene un formato tabular (`tsv`) y contiene la siguiente información:
+
+```markdown
+| Version    | Tiempo |
+|------------|--------|
+| Secuencial | 0.0297 |
+| Paralela-2 | 0.0150 |
+| Paralela-4 | 0.0149 |
+| Paralela-8 | 0.0155 |
+```
+
+### Visualización del Gráfico
+
+El gráfico generado se guardará en la carpeta registros con un nombre que contiene el valor de N y la fecha actual. Muestra el tiempo de cómputo para la sumatoria de los valores flotantes en cada tipo de proceso (secuencial y paralelizado).
+
+![Gráfico generado por el programa con n=10, m=10000000 y con procesos secuencial, paralelizado 2 hilos, paralelizados 4 hilos y paralelizados 8 hilos](ejercicio-3/registros/sumatoria-flotante_n10000000_16-11-2024.png)
+
+### Respuesta
+
+La reducción en OpenMP permite evitar condiciones de carrera al sumar los valores del arreglo, ya que cada hilo tiene su propia variable privada para acumular la suma parcial. Al final del proceso, las sumas parciales se combinan automáticamente en una única variable global, garantizando que no haya conflictos de acceso concurrente entre los hilos. Esto asegura que el resultado final sea correcto y que todos los valores se sumen sin perder ninguna contribución debido a la concurrencia.
+
+En el gráfico generado, se observa que el tiempo de cómputo disminuye al pasar de un proceso secuencial a uno paralelo con 2 hilos. Sin embargo, no hay una variación significativa en el tiempo al aumentar a 4 y 8 hilos. Esto se debe a que la máquina virtual utilizada tiene solo 2 núcleos, lo cual limita la capacidad de paralelización efectiva más allá de los 2 hilos, haciendo que el tiempo de ejecución sea aproximadamente similar en los procesos paralelizados con 2 o más hilos en este caso.
+
+### Ejercicio 4
 
 
 
