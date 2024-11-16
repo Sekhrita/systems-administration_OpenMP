@@ -1,5 +1,12 @@
 # systems-administration_OpenMP
 
+Este proyecto aborda la paralelización de tareas utilizando OpenMP, explorando su eficiencia para optimizar procesos mediante la asignación de más recursos o hilos. A lo largo de los ejercicios se busca demostrar cómo la paralelización puede mejorar significativamente el rendimiento de cálculos complejos, como la multiplicación de matrices y la realización de incrementos en arreglos. Además, se investigan y evalúan las alternativas para evitar condiciones de carrera, uno de los principales problemas al trabajar con hilos, y se analizan las ventajas y desventajas de la sincronización para garantizar la integridad de los datos. El proyecto proporciona una perspectiva práctica sobre la implementación de técnicas de paralelización y las consideraciones necesarias para maximizar su eficacia.
+
+Para seguir las intrucciones en cada ejercicio se requiere entrar a la carpeta correspondiente (siendo X el número del ejercicio de turno):
+```bash
+cd ejercicio-X
+```
+
 ## Ejercicio 1
 
 Esta sección contiene scripts para evaluar el rendimiento de la ejecución secuencial y paralelizada del cálculo factorial de un número N. Se utilizan programas escritos en C para realizar los cálculos y un script de Python para generar un gráfico que compara los tiempos de ejecución. 
