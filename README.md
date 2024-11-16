@@ -186,7 +186,7 @@ numero-inconsistencias    22815
 ### Visualización del Gráfico
 
 El gráfico generado se guardará en la carpeta `registros` con un nombre que contiene los valores de `N`, `M`, el número de hilos y la fecha actual.
-![Gráfico generado por el programa con n=10, m=10000000 y dos hilos](ejercicio-2/registro/incremento_n10-m10000000_hilos-2_16-11-2024.png)
+![Gráfico generado por el programa con n=10, m=10000000 y dos hilos](ejercicio-2/registros/incremento_n10-m10000000_hilos-2_16-11-2024.png)
 
 ### Respuesta
 
