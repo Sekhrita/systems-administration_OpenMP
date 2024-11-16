@@ -1,0 +1,5 @@
+tipo-proceso	dimension-matriz	tiempo
+secuencial	2500	131.009045
+paralelo-2	2500	59.976203
+paralelo-4	2500	60.804428
+paralelo-8	2500	60.235172
